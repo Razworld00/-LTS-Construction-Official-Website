@@ -1061,101 +1061,202 @@ h1,h2,h3,h4 {
 }
 
 /* ============================================================
-   Dark Mode
+   Dark Mode – high contrast, readable text
    ============================================================ */
+
+/* Keep brand reds; only shift neutrals for surfaces/text */
 html[data-theme="dark"] {
-  --black: #f5f5f5;
-  --dark: #e8e8e8;
-  --gray-900: #e0e0e0;
-  --gray-800: #d0d0d0;
-  --gray-700: #c8c8c8;
-  --gray-500: #a0a0a0;
-  --gray-300: #666;
-  --gray-100: #1e1e1e;
-  --white: #121212;
-  --shadow: 0 10px 40px rgba(0,0,0,.45);
-  --shadow-lg: 0 25px 60px rgba(0,0,0,.55);
+  --gray-900: #f0f0f0;
+  --gray-800: #e0e0e0;
+  --gray-700: #d4d4d4;
+  --gray-500: #b0b0b0;
+  --gray-300: #888;
+  --gray-100: #1a1a1a;
+  --shadow: 0 10px 40px rgba(0,0,0,.5);
+  --shadow-lg: 0 25px 60px rgba(0,0,0,.6);
 }
 
 html[data-theme="dark"] body {
   background: #0d0d0d;
-  color: #d0d0d0;
+  color: #e8e8e8;
 }
 
+/* Header */
 html[data-theme="dark"] .header {
-  background: rgba(18,18,18,.94);
-  border-bottom-color: rgba(255,255,255,.08);
+  background: rgba(12,12,12,.96);
+  border-bottom-color: rgba(255,255,255,.1);
 }
-
 html[data-theme="dark"] .nav a {
-  color: #ccc;
+  color: #e0e0e0;
 }
 html[data-theme="dark"] .nav a:hover,
 html[data-theme="dark"] .nav a.active {
-  color: var(--red-light);
-  background: rgba(200,16,46,.15);
+  color: #ff6b7a;
+  background: rgba(200,16,46,.18);
 }
-
 html[data-theme="dark"] .menu-toggle span {
-  background: #eee;
+  background: #f0f0f0;
 }
 
-html[data-theme="dark"] .service-card,
-html[data-theme="dark"] .testimonial-card {
-  background: #1a1a1a;
-  border-color: rgba(255,255,255,.08);
+/* Theme toggle */
+html[data-theme="dark"] .theme-toggle {
+  border-color: rgba(255,255,255,.25);
+  color: #f0f0f0;
+}
+html[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(200,16,46,.25);
+  color: #ff6b7a;
+  border-color: #c8102e;
 }
 
-html[data-theme="dark"] .service-card h3,
-html[data-theme="dark"] .testimonial-card .author-info strong,
+/* Mobile menu – force bright text on dark overlay (do NOT use inverted vars) */
+html[data-theme="dark"] .nav-mobile {
+  background: rgba(8,8,8,.98);
+}
+html[data-theme="dark"] .nav-mobile a {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .nav-mobile a:hover,
+html[data-theme="dark"] .nav-mobile a.active {
+  color: #ff6b7a !important;
+}
+html[data-theme="dark"] .nav-mobile .mobile-phone {
+  background: #c8102e;
+  color: #ffffff !important;
+}
+
+/* Trust bar – always dark surface with bright text */
+html[data-theme="dark"] .trust-bar {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .trust-bar li {
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .trust-bar li::before {
+  color: #ff6b7a !important;
+}
+
+/* Headings & labels */
 html[data-theme="dark"] h1,
 html[data-theme="dark"] h2,
 html[data-theme="dark"] h3,
-html[data-theme="dark"] h4 {
-  color: #f0f0f0;
-}
-
+html[data-theme="dark"] h4,
 html[data-theme="dark"] .section-title {
-  color: #f0f0f0;
+  color: #ffffff;
+}
+html[data-theme="dark"] .section-label {
+  color: #ff6b7a;
+}
+html[data-theme="dark"] .section-desc {
+  color: #c8c8c8;
 }
 
+/* Cards */
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .testimonial-card {
+  background: #1a1a1a;
+  border-color: rgba(255,255,255,.1);
+}
+html[data-theme="dark"] .service-card h3,
+html[data-theme="dark"] .testimonial-card .author-info strong {
+  color: #ffffff;
+}
+html[data-theme="dark"] .service-card p,
+html[data-theme="dark"] .testimonial-card .quote {
+  color: #c8c8c8;
+}
+html[data-theme="dark"] .service-card a {
+  color: #ff6b7a;
+}
+html[data-theme="dark"] .service-icon {
+  background: rgba(200,16,46,.2);
+  color: #ff6b7a;
+}
+
+/* Process steps */
 html[data-theme="dark"] .process-step {
   background: #1a1a1a;
 }
 html[data-theme="dark"] .process-step:hover {
   background: #222;
 }
+html[data-theme="dark"] .process-step h4 {
+  color: #ffffff;
+}
+html[data-theme="dark"] .process-step p {
+  color: #c8c8c8;
+}
 
+/* Value list (about preview) */
+html[data-theme="dark"] .value-list li {
+  color: #e8e8e8;
+}
+html[data-theme="dark"] .value-list li::before {
+  color: #ff6b7a;
+}
+
+/* Contact */
 html[data-theme="dark"] .contact-info {
   background: #1a1a1a;
 }
-
+html[data-theme="dark"] .contact-info h3 {
+  color: #ffffff;
+}
 html[data-theme="dark"] .form-group input,
 html[data-theme="dark"] .form-group select,
 html[data-theme="dark"] .form-group textarea {
   background: #1a1a1a;
-  border-color: #333;
-  color: #eee;
+  border-color: #444;
+  color: #f0f0f0;
 }
-
 html[data-theme="dark"] .form-group label {
-  color: #bbb;
+  color: #d0d0d0;
 }
-
 html[data-theme="dark"] .info-item a {
-  color: #eee;
+  color: #ff6b7a;
+}
+html[data-theme="dark"] .info-item strong {
+  color: #a0a0a0;
 }
 
+/* Footer */
 html[data-theme="dark"] .footer {
-  background: #0a0a0a;
+  background: #080808;
+  color: #b0b0b0;
+}
+html[data-theme="dark"] .footer h4 {
+  color: #ffffff;
+}
+html[data-theme="dark"] .footer a:hover {
+  color: #ff6b7a;
 }
 
+/* Sections with light backgrounds */
 html[data-theme="dark"] .section[style*="background:#fafafa"],
 html[data-theme="dark"] .section[style*="background: #fafafa"] {
   background: #141414 !important;
 }
 
-/* Theme toggle button */
+/* Stats strip / CTA stay intentional */
+html[data-theme="dark"] .stats-strip {
+  background: #111;
+}
+html[data-theme="dark"] .stat-item span {
+  color: rgba(255,255,255,.75);
+}
+
+/* Project overlay text already white – leave as is */
+
+/* Page hero text */
+html[data-theme="dark"] .page-hero h1 {
+  color: #ffffff;
+}
+html[data-theme="dark"] .page-hero p {
+  color: rgba(255,255,255,.85);
+}
+
+/* Theme toggle button base (light mode) */
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -1174,14 +1275,6 @@ html[data-theme="dark"] .section[style*="background: #fafafa"] {
   background: rgba(200,16,46,.08);
   border-color: var(--red);
   color: var(--red);
-}
-html[data-theme="dark"] .theme-toggle {
-  border-color: rgba(255,255,255,.15);
-  color: #ccc;
-}
-html[data-theme="dark"] .theme-toggle:hover {
-  background: rgba(200,16,46,.2);
-  color: var(--red-light);
 }
 .theme-toggle svg {
   width: 20px;
